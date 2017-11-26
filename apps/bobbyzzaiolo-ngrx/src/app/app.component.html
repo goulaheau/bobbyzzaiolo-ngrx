@@ -1,0 +1,26 @@
+<div class="main-container">
+  <header class="header-1">
+    <div class="branding">
+      <a routerLink="/"
+         class="nav-link">
+        <span class="title">Bobbyzzaiolo</span>
+      </a>
+    </div>
+
+    <div class="header-nav">
+      <a routerLink="/admin"
+         routerLinkActive="active"
+         class="nav-link nav-text">
+        Administration
+      </a>
+    </div>
+  </header>
+
+  <div class="content-container">
+    <div class="content-area">
+      <app-alert></app-alert>
+
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

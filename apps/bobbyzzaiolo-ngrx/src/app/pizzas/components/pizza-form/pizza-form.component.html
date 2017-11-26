@@ -1,0 +1,76 @@
+<h1 *ngIf="!this.pizza?._id">Ajouter une pizza</h1>
+<h1 *ngIf="this.pizza?._id">Modifier une pizza</h1>
+
+<form class="form" [formGroup]="pizzaForm" (ngSubmit)="onSubmit()">
+  <section class="form-block">
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <label for="name"
+             aria-haspopup="true"
+             role="tooltip"
+             class="tooltip tooltip-validation tooltip-sm"
+             [class.invalid]="pizzaForm.get('name').invalid
+                && (pizzaForm.get('name').dirty
+                  || pizzaForm.get('name').touched)">
+        <input id="name" type="text"
+               formControlName="name">
+        <span class="tooltip-content">
+          Le nom est requis.
+        </span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description"
+                formControlName="description"
+                rows="5" >
+      </textarea>
+    </div>
+    <div class="form-group">
+      <label for="price">Prix</label>
+      <label for="price"
+             aria-haspopup="true"
+             role="tooltip"
+             class="tooltip tooltip-validation tooltip-sm"
+             [class.invalid]="pizzaForm.get('price').invalid
+                && (pizzaForm.get('price').dirty
+                  || pizzaForm.get('price').touched)">
+        <input id="price" type="number"
+               formControlName="price">
+        <span class="tooltip-content">
+          Le prix est requis.
+        </span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="image">Image</label>
+      <label for="image">
+        <img [src]="pizzaImage" alt="">
+        <input id="image"
+               type="file"
+               accept="image/*"
+               (change)="onChangeImage($event)">
+      </label>
+    </div>
+    <div class="form-group">
+      <label>Ingrédients</label>
+      <button *ngFor="let ingredient of ingredients"
+              (click)="onClickIngredient(ingredient)"
+              class="btn btn-sm"
+              [ngClass]="isClicked(ingredient)"
+              type="button">
+        {{ ingredient.name }}
+      </button>
+    </div>
+    <button *ngIf="!this.pizza?._id"
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="pizzaForm.invalid">Ajouter
+    </button>
+    <button *ngIf="this.pizza?._id"
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="pizzaForm.invalid">Modifier
+    </button>
+  </section>
+</form>

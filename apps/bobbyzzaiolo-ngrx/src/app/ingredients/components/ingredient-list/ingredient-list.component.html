@@ -1,0 +1,40 @@
+<clr-datagrid [(clrDgSelected)]="selectedIngredients">
+  <clr-dg-action-bar>
+    <div class="btn-group">
+      <button (click)="emit('addIngredient')"
+              type="button"
+              class="btn btn-sm btn-secondary">
+        <clr-icon shape="plus"></clr-icon>
+        Ajouter
+      </button>
+
+      <button *ngIf="selectedIngredients.length > 0"
+              (click)="emit('deleteIngredient')"
+              type="button"
+              class="btn btn-sm btn-secondary">
+        <clr-icon shape="close"></clr-icon>
+        Supprimer
+      </button>
+
+      <button *ngIf="selectedIngredients.length == 1"
+              (click)="emit('editIngredient')"
+              type="button"
+              class="btn btn-sm btn-secondary">
+        <clr-icon shape="pencil"></clr-icon>
+        Modifier
+      </button>
+    </div>
+  </clr-dg-action-bar>
+
+  <clr-dg-column [clrDgField]="'name'">Nom</clr-dg-column>
+  <clr-dg-column [clrDgField]="'weight'">Grammage</clr-dg-column>
+  <clr-dg-column [clrDgField]="'price'">Prix</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let ingredient of ingredients" [clrDgItem]="ingredient">
+    <clr-dg-cell>{{ingredient.name}}</clr-dg-cell>
+    <clr-dg-cell>{{ingredient.weight}}</clr-dg-cell>
+    <clr-dg-cell>{{ingredient.price}}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>{{ingredients.length}} ingrédients</clr-dg-footer>
+</clr-datagrid>

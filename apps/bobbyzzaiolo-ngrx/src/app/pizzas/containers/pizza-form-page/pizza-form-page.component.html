@@ -1,0 +1,9 @@
+<div class="row">
+  <div class="col-xs-12">
+    <app-pizza-form [pizza]="pizza$ | async"
+                    [ingredients]="ingredients$ | async"
+                    (createPizza)="onCreatePizza($event)"
+                    (updatePizza)="onUpdatePizza($event)">
+    </app-pizza-form>
+  </div>
+</div>

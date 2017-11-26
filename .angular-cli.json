@@ -3,7 +3,63 @@
   "project": {
     "name": "bobbyzzaiolo"
   },
-  "apps": [],
+  "apps": [
+    {
+      "name": "bobbyzzaiolo-ngrx",
+      "root": "apps/bobbyzzaiolo-ngrx/src",
+      "outDir": "dist/apps/bobbyzzaiolo-ngrx",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "../../../tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "../../../node_modules/clarity-icons/clarity-icons.min.css",
+        "../../../node_modules/clarity-ui/clarity-ui.min.css",
+        "styles.css"
+      ],
+      "scripts": [
+        "../../../node_modules/@webcomponents/custom-elements/custom-elements.min.js",
+        "../../../node_modules/clarity-icons/clarity-icons.min.js"
+      ],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    },
+    {
+      "name": "tests",
+      "root": "apps/tests/src",
+      "outDir": "dist/apps/tests",
+      "assets": [
+        "assets",
+        "favicon.ico"
+      ],
+      "index": "index.html",
+      "main": "main.ts",
+      "polyfills": "polyfills.ts",
+      "test": "../../../test.js",
+      "tsconfig": "../../../tsconfig.app.json",
+      "testTsconfig": "../../../tsconfig.spec.json",
+      "prefix": "app",
+      "styles": [
+        "styles.css"
+      ],
+      "scripts": [],
+      "environmentSource": "environments/environment.ts",
+      "environments": {
+        "dev": "environments/environment.ts",
+        "prod": "environments/environment.prod.ts"
+      }
+    }
+  ],
   "e2e": {
     "protractor": {
       "config": "./protractor.conf.js"
@@ -29,7 +85,10 @@
     "schematics": {
       "collection": "@nrwl/schematics",
       "postGenerate": "npm run format",
-      "newProject": ["app", "lib"]
+      "newProject": [
+        "app",
+        "lib"
+      ]
     },
     "styleExt": "css",
     "component": {}

@@ -1,0 +1,11 @@
+<a routerLink="/"
+   class="btn">
+  <clr-icon shape="undo"></clr-icon>
+  La carte
+</a>
+<div class="row">
+  <div class="col-xs-12">
+    <app-pizza-detail [pizza]="pizza$ | async">
+    </app-pizza-detail>
+  </div>
+</div>

@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col-xl-6">
+    <h1>Pizzas</h1>
+
+    <app-pizza-list [pizzas]="pizzas$ | async"
+                    (addPizza)="onAddPizza()"
+                    (editPizza)="onEditPizza($event)"
+                    (deletePizza)="onDeletePizza($event)">
+    </app-pizza-list>
+  </div>
+
+  <div class="col-xl-6">
+    <h1>Ingrédients</h1>
+
+    <app-ingredient-list [ingredients]="ingredients$ | async"
+                         (addIngredient)="onAddIngredient()"
+                         (editIngredient)="onEditIngredient($event)"
+                         (deleteIngredient)="onDeleteIngredient($event)">
+    </app-ingredient-list>
+  </div>
+</div>

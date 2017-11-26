@@ -1,0 +1,43 @@
+<clr-datagrid [(clrDgSelected)]="selectedPizzas">
+  <clr-dg-action-bar>
+    <div class="btn-group">
+      <button (click)="emit('addPizza')"
+              type="button"
+              class="btn btn-sm btn-secondary">
+        <clr-icon shape="plus"></clr-icon>
+        Ajouter
+      </button>
+
+      <button *ngIf="selectedPizzas.length > 0"
+              (click)="emit('deletePizza')"
+              type="button"
+              class="btn btn-sm btn-secondary">
+        <clr-icon shape="close"></clr-icon>
+        Supprimer
+      </button>
+
+      <button *ngIf="selectedPizzas.length == 1"
+              (click)="emit('editPizza')"
+              type="button"
+              class="btn btn-sm btn-secondary">
+        <clr-icon shape="pencil"></clr-icon>
+        Modifier
+      </button>
+    </div>
+  </clr-dg-action-bar>
+
+  <clr-dg-column [clrDgField]="'name'">Nom</clr-dg-column>
+  <clr-dg-column [clrDgField]="'price'">Prix</clr-dg-column>
+  <clr-dg-column [clrDgField]="'createdAt'">Créée le</clr-dg-column>
+  <clr-dg-column [clrDgField]="'updatedAt'">Mise à jour le</clr-dg-column>
+
+  <clr-dg-row *clrDgItems="let pizza of pizzas"
+              [clrDgItem]="pizza">
+    <clr-dg-cell>{{ pizza.name }}</clr-dg-cell>
+    <clr-dg-cell>{{ pizza.price }}</clr-dg-cell>
+    <clr-dg-cell>{{ pizza.createdAt | date }}</clr-dg-cell>
+    <clr-dg-cell>{{ pizza.updatedAt | date }}</clr-dg-cell>
+  </clr-dg-row>
+
+  <clr-dg-footer>{{ pizzas.length }} pizzas</clr-dg-footer>
+</clr-datagrid>

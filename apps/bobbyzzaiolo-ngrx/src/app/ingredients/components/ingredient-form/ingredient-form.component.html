@@ -1,0 +1,58 @@
+<h1>Ajouter un ingrédient</h1>
+
+<form class="form" [formGroup]="ingredientForm" (ngSubmit)="onSubmit()">
+  <section class="form-block">
+    <div class="form-group">
+      <label for="name">Nom</label>
+      <label for="name"
+             aria-haspopup="true"
+             role="tooltip"
+             class="tooltip tooltip-validation tooltip-sm"
+             [class.invalid]="ingredientForm.get('name').invalid
+                && (ingredientForm.get('name').dirty
+                  || ingredientForm.get('name').touched)">
+        <input id="name" type="text"
+               formControlName="name">
+        <span class="tooltip-content">
+          Le nom est requis.
+        </span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="weight">Grammage</label>
+      <label for="weight"
+             aria-haspopup="true"
+             role="tooltip"
+             class="tooltip tooltip-validation tooltip-sm"
+             [class.invalid]="ingredientForm.get('weight').invalid
+                && (ingredientForm.get('weight').dirty
+                  || ingredientForm.get('weight').touched)">
+        <input id="weight" type="text"
+               formControlName="weight">
+        <span class="tooltip-content">
+          Le grammage est requis.
+        </span>
+      </label>
+    </div>
+    <div class="form-group">
+      <label for="price">Prix</label>
+      <label for="price"
+             aria-haspopup="true"
+             role="tooltip"
+             class="tooltip tooltip-validation tooltip-sm"
+             [class.invalid]="ingredientForm.get('price').invalid
+                && (ingredientForm.get('price').dirty
+                  || ingredientForm.get('price').touched)">
+        <input id="price" type="number"
+               formControlName="price">
+        <span class="tooltip-content">
+          Le prix est requis.
+        </span>
+      </label>
+    </div>
+    <button class="btn btn-primary"
+            type="submit"
+            [disabled]="ingredientForm.invalid">Ajouter
+    </button>
+  </section>
+</form>
