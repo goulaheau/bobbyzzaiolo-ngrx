@@ -1,44 +1,38 @@
-# Bobbyzzaiolo
+# Bobbyzzaiolo NgRX
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0 using [Nrwl Nx](https://nrwl.io/nx).
 
-## Nrwl Extensions for Angular (Nx)
 
-<a href="https://nrwl.io/nx"><img src="https://preview.ibb.co/mW6sdw/nx_logo.png"></a>
+## Getting Started
 
-Nx is an open source toolkit for enterprise Angular applications.
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
 
-Nx is designed to help you create and build enterprise grade Angular applications. It provides an opinionated approach to application project structure and patterns.
+### Prerequisites
 
-## Quick Start & Documentation
+[Node.js](https://nodejs.org/en/download/) 8.8 or higher is required.
 
-[Watch a 5-minute video on how to get started with Nx.](http://nrwl.io/nx)
+### Installing
 
-## Generate your first application
+Clone this repo or just download it as a zip and uncompress it in a folder.
 
-Run `ng generate app myapp` to generate an application. When using Nx, you can create multiple applications and libraries in the same CLI workspace. Read more [here](http://nrwl.io/nx).
+Then, inside the folder, install the dependencies:
 
-## Development server
+```
+npm i
+```
 
-Run `ng serve --app=myapp` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+That's all, you can now start the server:
 
-## Code scaffolding
+```
+npm start
+```
 
-Run `ng generate component component-name --app=myapp` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Author
 
-## Build
+**Enzo Cornand** - goulaheau@gmail.com
 
-Run `ng build --app=myapp` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `-prod` flag for a production build.
+## Acknowledgments
 
-## Running unit tests
+### Images
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-Before running the tests make sure you are serving the app via `ng serve`.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Images must be less thank 5 MB.
